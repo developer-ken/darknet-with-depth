@@ -1,0 +1,5 @@
+classes = 1
+train  = Dataset/train.txt
+valid  = Dataset/validate.txt
+names = Dataset/obj.names
+backup = backup/
