@@ -1104,8 +1104,9 @@ data load_data_detection(int n, char **paths, int m, int w, int h, int c, int bo
         for (i = 0; i < n; ++i) {
             float *truth = (float*)xcalloc(truth_size * boxes, sizeof(float));
             const char *filename = random_paths[i];
-
-            int flag = (c >= 3);
+            int flag = 0;//Gray  Single channel
+            if(c==3)flag=1;//RGB 3-Channel
+            if(c>3)flag=-1;//A+RGB+? 4 More Channel
             mat_cv *src;
             src = load_image_mat_cv(filename, flag);
             if (src == NULL) {

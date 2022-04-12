@@ -140,7 +140,7 @@ cv::Mat load_image_mat(char *filename, int channels)
     else if (channels == 1) flag = cv::IMREAD_GRAYSCALE;
     else if (channels == 3) flag = cv::IMREAD_COLOR;
     else {
-        fprintf(stderr, "OpenCV can't force load with %d channels\n", channels);
+        flag = cv::IMREAD_UNCHANGED;
     }
     //flag |= IMREAD_IGNORE_ORIENTATION;    // un-comment it if you want
 
